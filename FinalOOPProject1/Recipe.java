@@ -1,5 +1,5 @@
 
-package FinalOOPProject1;
+package Supply;
 import java.util.*;
 
 
@@ -32,18 +32,18 @@ public class Recipe {
     }
     
 
-    public static void addRecipe(Recipe r) {
+    public void addRecipe(Recipe r) {
         recipeList.add(r);
     }
 
-    private static Food findFoodByCode(String code) {
+    private Food findFoodByCode(String code) {
         for (Food f : Food.getFoodList()) {
             if (f.getCode().equalsIgnoreCase(code)) return f;
         }
         return null;
     }
 
-    private static Beverage findBeverageByCode(String code) {
+    private Beverage findBeverageByCode(String code) {
         for (Beverage b : Beverage.getBeverageList()) {
             if (b.getCode().equalsIgnoreCase(code)) return b;
         }
@@ -57,7 +57,7 @@ public class Recipe {
     return null;
     
 }
-   public static void addFoodRecipeList() {
+   public void addFoodRecipeList() {
     Scanner s = new Scanner(System.in);
     String inputFoodCode;
 
@@ -97,7 +97,7 @@ public class Recipe {
         }
     } else {
         recipe = new Recipe(selectedFood);
-        Recipe.addRecipe(recipe);
+        recipe.addRecipe(recipe);
         System.out.println("New recipe created.");
     }
 
@@ -135,7 +135,7 @@ public class Recipe {
 
 
    
-public static void addBeveRecipeList() {
+public void addBeveRecipeList() {
     Scanner s = new Scanner(System.in);
     String inputBeveCode;
 
@@ -177,7 +177,7 @@ public static void addBeveRecipeList() {
         }
     } else {
         recipe = new Recipe(selectedDrink);
-        Recipe.addRecipe(recipe);
+        recipe.addRecipe(recipe);
         System.out.println("New recipe created.");
     }
 
@@ -213,7 +213,7 @@ public static void addBeveRecipeList() {
     System.out.println("Recipe updated for: " + selectedDrink.getName());
 }
 
-   public static void showRecipeList() {
+   public void showRecipeList() {
         if (recipeList.isEmpty()) {
                 System.out.println("No recipes available.");
                 return;
@@ -231,4 +231,5 @@ public static void addBeveRecipeList() {
    }
 
 }
+
 
